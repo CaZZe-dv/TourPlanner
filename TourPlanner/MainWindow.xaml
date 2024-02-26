@@ -5,8 +5,44 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TourPlanner"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Tour Planner" Height="450" Width="800">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Orientation="Vertical">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button Content="File" Grid.Column="0" HorizontalAlignment="Stretch"/>
+                <Button Content="Edit" Grid.Column="1" HorizontalAlignment="Stretch"/>
+                <Button Content="Options" Grid.Column="2" HorizontalAlignment="Stretch"/>
+                <Button Content="" Grid.Column="3" HorizontalAlignment="Stretch"/>
+                <Button Content="" Grid.Column="4" HorizontalAlignment="Stretch"/>
+                <Button Content="Help" Grid.Column="5" HorizontalAlignment="Stretch"/>
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBox Text="Search..." Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Stretch" Height="20" />
+                <Image Grid.Column="1" Source="./Images/lupe.png" HorizontalAlignment="Left" VerticalAlignment="Center" Height="20" Width="20"/>
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                
+            </Grid>
+        </StackPanel>
 
     </Grid>
 </Window>
