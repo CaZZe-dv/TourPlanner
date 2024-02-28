@@ -82,8 +82,32 @@
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    <Image Grid.Row="0" Grid.Column="0" Source=""  HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    
+                    <Image Grid.Row="0" Grid.Column="0" Source="./Images/example_map_view.png"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <StackPanel Grid.Row="1" Grid.Column="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                        <!-- Title and buttons -->
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
+                            <TextBlock Text="Tours" HorizontalAlignment="Left"/>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                <Button Content="+"/>
+                                <Button Content="-"/>
+                                <Button Content="..."/>
+                            </StackPanel>
+                        </StackPanel>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                        </Grid>
+                    </StackPanel>
                 </Grid>
             </StackPanel>
         </Grid>
