@@ -4,112 +4,27 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TourPlanner"
+        xmlns:views="clr-namespace:TourPlanner.Views"
         mc:Ignorable="d"
         Title="Tour Planner" MinHeight="450" MinWidth="800">
-    <StackPanel Orientation="Vertical" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-        <!-- Content for the window -->
-        <Grid>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="9*"/>
+        </Grid.RowDefinitions>
+        <views:HeaderBarView Grid.Row="0"/>
+        <views:SearchBarView Grid.Row="1"/>
+        <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
-                <!-- Define columns for the first grid -->
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <!-- Buttons in the first grid -->
-            <Button Content="File" Grid.Column="0" HorizontalAlignment="Stretch"/>
-            <Button Content="Edit" Grid.Column="1" HorizontalAlignment="Stretch"/>
-            <Button Content="Options" Grid.Column="2" HorizontalAlignment="Stretch"/>
-            <Button Content="" Grid.Column="3" HorizontalAlignment="Stretch"/>
-            <Button Content="" Grid.Column="4" HorizontalAlignment="Stretch"/>
-            <Button Content="Help" Grid.Column="5" HorizontalAlignment="Stretch"/>
-        </Grid>
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <!-- Define columns for the second grid -->
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="Auto"/>
-            </Grid.ColumnDefinitions>
-            <!-- TextBox with placeholder text -->
-            <TextBox Text="Search..." Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Stretch" Height="20" />
-            <!-- Image -->
-            <Image Grid.Column="1" Source="./Images/lupe.png" HorizontalAlignment="Right" VerticalAlignment="Center" Height="20" Width="20"/>
-        </Grid>
-        <Grid VerticalAlignment="Stretch">
-            <Grid.RowDefinitions>
-                <!-- Define rows for the third grid -->
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <!-- Define columns for the third grid -->
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
-            <!-- StackPanel containing tour information -->
-            <StackPanel Grid.Row="0" Grid.Column="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-                <!-- Title and buttons -->
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
-                    <TextBlock Text="Tours" HorizontalAlignment="Left"/>
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                        <Button Content="+"/>
-                        <Button Content="-"/>
-                        <Button Content="..."/>
-                    </StackPanel>
-                </StackPanel>
-                <!-- Tour items -->
-                <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                    <TextBlock Text="Wienerwald"/>
-                    <TextBlock Text="Doppelhütte"/>
-                    <TextBlock Text="Figlwarte"/>
-                    <TextBlock Text="Dortrunde"/>
-                    <TextBlock Text="Vestibulum at eros" VerticalAlignment="Bottom"/>
-                </StackPanel>
-            </StackPanel>
-            <!-- Empty StackPanel for second column -->
-            <StackPanel Grid.Row="0" Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
-                    <Button Content="General"/>
-                    <Button Content="Route"/>
-                    <Button Content="Misc"/>
-                </StackPanel>
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                    </Grid.RowDefinitions>
-                    <Image Grid.Row="0" Grid.Column="0" Source="./Images/example_map_view.png"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    <StackPanel Grid.Row="1" Grid.Column="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-                        <!-- Title and buttons -->
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
-                            <TextBlock Text="Tours" HorizontalAlignment="Left"/>
-                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                                <Button Content="+"/>
-                                <Button Content="-"/>
-                                <Button Content="..."/>
-                            </StackPanel>
-                        </StackPanel>
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="*"/>
-                            </Grid.ColumnDefinitions>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="*"/>
-                            </Grid.RowDefinitions>
-                        </Grid>
-                    </StackPanel>
-                </Grid>
-            </StackPanel>
+            <views:ListControlView Grid.Column="0"/>
+            <views:MapControlView Grid.Column="1"/>
         </Grid>
-    </StackPanel>
+    </Grid>
 </Window>
