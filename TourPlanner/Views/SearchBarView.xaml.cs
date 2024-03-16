@@ -1,25 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace TourPlanner.Views
 {
-    /// <summary>
-    /// Interaktionslogik für SearchBarView.xaml
-    /// </summary>
     public partial class SearchBarView : UserControl
     {
+        // Define dependency properties
+        public static readonly DependencyProperty SearchBarProperty =
+            DependencyProperty.Register("SearchBar", typeof(string), typeof(SearchBarView), new PropertyMetadata(string.Empty));
+
+        public static readonly DependencyProperty RouteImageProperty =
+            DependencyProperty.Register("RouteImage", typeof(ImageSource), typeof(SearchBarView), new PropertyMetadata(null));
+
+        // Define corresponding properties
+        public string SearchBar
+        {
+            get { return (string)GetValue(SearchBarProperty); }
+            set { SetValue(SearchBarProperty, value); }
+        }
+
+        public ImageSource RouteImage
+        {
+            get { return (ImageSource)GetValue(RouteImageProperty); }
+            set { SetValue(RouteImageProperty, value); }
+        }
+
         public SearchBarView()
         {
             InitializeComponent();

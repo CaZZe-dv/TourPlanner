@@ -1,25 +1,48 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿// HeaderBarView.xaml.cs
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace TourPlanner.Views
 {
-    /// <summary>
-    /// Interaktionslogik für HeaderBarView.xaml
-    /// </summary>
     public partial class HeaderBarView : UserControl
     {
+        public static readonly DependencyProperty FileCommandProperty =
+            DependencyProperty.Register("FileCommand", typeof(ICommand), typeof(HeaderBarView));
+
+        public ICommand FileCommand
+        {
+            get { return (ICommand)GetValue(FileCommandProperty); }
+            set { SetValue(FileCommandProperty, value); }
+        }
+
+        public static readonly DependencyProperty EditCommandProperty =
+            DependencyProperty.Register("EditCommand", typeof(ICommand), typeof(HeaderBarView));
+
+        public ICommand EditCommand
+        {
+            get { return (ICommand)GetValue(EditCommandProperty); }
+            set { SetValue(EditCommandProperty, value); }
+        }
+
+        public static readonly DependencyProperty OptionsCommandProperty =
+            DependencyProperty.Register("OptionsCommand", typeof(ICommand), typeof(HeaderBarView));
+
+        public ICommand OptionsCommand
+        {
+            get { return (ICommand)GetValue(OptionsCommandProperty); }
+            set { SetValue(OptionsCommandProperty, value); }
+        }
+
+        public static readonly DependencyProperty HelpCommandProperty =
+            DependencyProperty.Register("HelpCommand", typeof(ICommand), typeof(HeaderBarView));
+
+        public ICommand HelpCommand
+        {
+            get { return (ICommand)GetValue(HelpCommandProperty); }
+            set { SetValue(HelpCommandProperty, value); }
+        }
+
         public HeaderBarView()
         {
             InitializeComponent();
