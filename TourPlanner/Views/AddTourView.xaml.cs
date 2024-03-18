@@ -15,10 +15,12 @@ using System.Windows.Shapes;
 
 namespace TourPlanner.Views
 {
-    
-    public partial class ListControlView : UserControl
+    /// <summary>
+    /// Interaktionslogik für AddTourView.xaml
+    /// </summary>
+    public partial class AddTourView : UserControl
     {
-        public ListControlView()
+        public AddTourView()
         {
             InitializeComponent();
         }

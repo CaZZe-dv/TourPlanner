@@ -12,6 +12,6 @@
             <ColumnDefinition Width="auto"/>
         </Grid.ColumnDefinitions>
         <TextBox Grid.Column="0" Text="{Binding SearchBar, UpdateSourceTrigger=PropertyChanged}" FontSize="24"/>
-        <Image Grid.Column="1" Source="{Binding RouteImage}" MaxHeight="40" MaxWidth="40"/>
+        <Image Grid.Column="1" Source="../Images/lupe.png" MaxHeight="40" MaxWidth="40"/>
     </Grid>
 </UserControl>

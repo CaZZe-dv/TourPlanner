@@ -5,19 +5,24 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:TourPlanner.Views"
              xmlns:views="clr-namespace:TourPlanner.Views"
-             mc:Ignorable="d" 
+             mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="350">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="8*"/>
         </Grid.RowDefinitions>
-        <views:ManageActionView Grid.Row="0"/>
-        <StackPanel Grid.Row="1" Orientation="Vertical">
-            <TextBlock Text="Wienerwald" FontSize="24"/>
-            <TextBlock Text="Dopplerhütte" FontSize="24"/>
-            <TextBlock Text="Figlwarte" FontSize="24"/>
-            <TextBlock Text="Dorfrunde" FontSize="24"/>
-        </StackPanel>
+        <views:ManageActionView Grid.Row="0" ManageActionViewText="Tours"
+                                ButtonPlus="{Binding ListControlViewButtonPlus}"
+                                ButtonMinus="{Binding ListControlViewButtonMinus}"
+                                ButtonEdit="{Binding ListControlViewButtonEdit}"/>
+        <ListBox Grid.Row="1" ItemsSource="{Binding Tours}" 
+                 SelectedItem="{Binding SelectedTour}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
     </Grid>
 </UserControl>
